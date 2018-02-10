@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicantTracking.Web", "Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicantTracking.Data", "ApplicantTracking.Data\ApplicantTracking.Data.csproj", "{2028C448-EB54-4C42-9664-5EBBC5519537}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicantTracking.Domain", "ApplicantTracking.Domain\ApplicantTracking.Domain.csproj", "{49A881DE-5215-412C-921E-A8301AF9C089}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2028C448-EB54-4C42-9664-5EBBC5519537}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2028C448-EB54-4C42-9664-5EBBC5519537}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2028C448-EB54-4C42-9664-5EBBC5519537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49A881DE-5215-412C-921E-A8301AF9C089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49A881DE-5215-412C-921E-A8301AF9C089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49A881DE-5215-412C-921E-A8301AF9C089}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49A881DE-5215-412C-921E-A8301AF9C089}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
