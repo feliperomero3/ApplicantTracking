@@ -14,6 +14,10 @@ la gestión y comunicación con el candidato o prospecto a laborar en la compañía.
 2. .NET Framework 4.6+
 3. Internet Information Services 10+
 
+## Autor
+
+[Felipe Romero](https://feliperomero.mx)
+
 ## Licencia
 
 Copyright 2018 Felipe Romero
