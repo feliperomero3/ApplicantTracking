@@ -24,8 +24,7 @@ namespace ApplicantTracking.Web
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/bootstrap-theme.css",
+                      "~/Content/bootswatch/cerulean/bootstrap.css",
                       "~/Content/site.css"));
         }
     }
