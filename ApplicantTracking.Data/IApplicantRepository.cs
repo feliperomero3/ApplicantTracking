@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApplicantTracking.Data
 {
-    public class Class1
+    interface IApplicantRepository
     {
     }
 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicantTracking.Domain
+namespace ApplicantTracking.Data
 {
-    public class Class1
+    public class ApplicantRepository
     {
+
     }
 }
