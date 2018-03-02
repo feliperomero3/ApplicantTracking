@@ -1,12 +1,12 @@
 # Applicant Tracking System
 
-Applicant Tracking System on ASP.NET MVC 5
+Applicant Tracking System on ASP.NET MVC 5 with Entity Framework 6
 
 ## Descripción
 
-El Sistema de Seguimiento del Solicitante o ATS (del inglés *Applicant Tracking System*) 
-tiene como objetivo principal proveer una plataforma central de reclutamiento que facilite 
-la gestión y comunicación con el candidato o prospecto a laborar en la compañía.
+El Sistema de Seguimiento del Solicitante o ATS (del inglés *Applicant Tracking System*)
+tiene como objetivo principal proveer una plataforma central que facilite 
+la gestión y comunicación con el solicitante durante el proceso de reclutamiento.
 
 ## Requisitos
 
