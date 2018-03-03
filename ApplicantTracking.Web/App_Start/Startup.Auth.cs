@@ -5,7 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using ApplicantTracking.Web.Models;
+using ApplicantTracking.Data.Identity;
 
 namespace ApplicantTracking.Web
 {

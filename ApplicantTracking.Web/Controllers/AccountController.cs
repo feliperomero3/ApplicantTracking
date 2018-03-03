@@ -1,14 +1,12 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using ApplicantTracking.Data.Identity;
+using ApplicantTracking.Web.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using ApplicantTracking.Web.Models;
 
 namespace ApplicantTracking.Web.Controllers
 {

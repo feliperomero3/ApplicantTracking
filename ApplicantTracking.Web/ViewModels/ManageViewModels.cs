@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace ApplicantTracking.Web.Models
+namespace ApplicantTracking.Web.ViewModels
 {
     public class IndexViewModel
     {

@@ -1,19 +1,17 @@
-namespace ApplicantTracking.Web.Migrations
+namespace ApplicantTracking.Data.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
+    using Identity;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "ApplicantTracking.Web.Models.ApplicationDbContext";
+            ContextKey = "ApplicantTracking.Data.ApplicationDbContext";
         }
 
-        protected override void Seed(Models.ApplicationDbContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

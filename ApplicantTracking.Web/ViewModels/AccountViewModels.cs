@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace ApplicantTracking.Web.Models
+namespace ApplicantTracking.Web.ViewModels
 {
     public class ExternalLoginConfirmationViewModel
     {

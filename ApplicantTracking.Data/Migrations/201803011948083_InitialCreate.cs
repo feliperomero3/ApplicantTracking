@@ -1,4 +1,4 @@
-namespace ApplicantTracking.Web.Migrations
+namespace ApplicantTracking.Data.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
