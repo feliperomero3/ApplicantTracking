@@ -8,7 +8,7 @@ namespace ApplicantTracking.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "ApplicantTracking.Data.ApplicationDbContext";
+            ContextKey = "ApplicantTracking.Data.Identity.ApplicationDbContext";
         }
 
         protected override void Seed(ApplicationDbContext context)
