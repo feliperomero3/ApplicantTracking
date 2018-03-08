@@ -4,6 +4,8 @@ USE [ApplicantTracking]
 SELECT *
 FROM [dbo].[__MigrationHistory]
 
+EXEC sp_help '[dbo].[__MigrationHistory]'
+
 /**/
 USE [ApplicantTracking]
 SELECT *

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicantTracking.Data
+namespace ApplicantTracking.Data.Repositores
 {
-    public class ApplicantRepository
+    interface IApplicantRepository
     {
-
     }
 }
