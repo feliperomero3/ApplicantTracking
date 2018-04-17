@@ -1,9 +1,11 @@
 namespace ApplicantTracking.Data.Migrations
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Domain.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ApplicantTracking.Data.Identity.ApplicationDbContext>
     {
@@ -19,6 +21,20 @@ namespace ApplicantTracking.Data.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
+            var applicants = new List<Applicant>()
+            {
+                new Applicant() { Nombre = "Felipe", ApellidoParterno = "Romero", Rfc = "FRRO0123456789", Nacionalidad = "Mexicano" },
+                new Applicant() { Nombre = "Jesica", ApellidoParterno = "Angulo", Rfc = "JANA012345671", Nacionalidad = "Mexicana" },
+                new Applicant() { Nombre = "Francisco", ApellidoParterno = "Montes", Rfc = "FRMO0123456789", Nacionalidad = "Mexicano" },
+                new Applicant() { Nombre = "Carla", ApellidoParterno = "Medina", Rfc = "CALA0123456789", Nacionalidad = "Mexicana" }
+            };
+
+            foreach (var applicant in applicants)
+            {
+                context.Applicants.AddOrUpdate(a => a.Nombre, applicant);
+            }
+
         }
     }
 }

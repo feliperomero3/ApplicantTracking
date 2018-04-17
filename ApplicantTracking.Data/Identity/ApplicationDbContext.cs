@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using ApplicantTracking.Domain.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -19,9 +20,14 @@ namespace ApplicantTracking.Data.Identity
             return new ApplicationDbContext();
         }
 
+        public DbSet<Applicant> Applicants { get; set; }
+        public DbSet<Domicilio> Domicilios { get; set; }
+        
         protected override void OnModelCreating(DbModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
 }

@@ -289,6 +289,10 @@
       <Project>{2028C448-EB54-4C42-9664-5EBBC5519537}</Project>
       <Name>ApplicantTracking.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ApplicantTracking.Domain\ApplicantTracking.Domain.csproj">
+      <Project>{49a881de-5215-412c-921e-a8301af9c089}</Project>
+      <Name>ApplicantTracking.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
