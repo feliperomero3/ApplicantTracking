@@ -2,8 +2,9 @@
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
-using ApplicantTracking.Domain.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using ApplicantTracking.Data.Migrations;
+using ApplicantTracking.Domain.Models;
 
 namespace ApplicantTracking.Data.Identity
 {
@@ -12,7 +13,7 @@ namespace ApplicantTracking.Data.Identity
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Migrations.Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
         }
 
         public static ApplicationDbContext Create()

@@ -6,8 +6,9 @@ namespace ApplicantTracking.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
     using Domain.Models;
+    using Identity;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ApplicantTracking.Data.Identity.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
         {
@@ -15,7 +16,7 @@ namespace ApplicantTracking.Data.Migrations
             ContextKey = "ApplicantTracking.Data.Identity.ApplicationDbContext";
         }
 
-        protected override void Seed(ApplicantTracking.Data.Identity.ApplicationDbContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -23,5 +23,9 @@ FROM [dbo].[AspNetUsers]
 
 /**/
 
+SELECT *
+FROM [dbo].[Applicant]
 
 
+SELECT *
+FROM [dbo].[Domicilio]
