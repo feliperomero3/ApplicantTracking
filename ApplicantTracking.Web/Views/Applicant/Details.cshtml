@@ -1,0 +1,82 @@
+﻿@model ApplicantTracking.Domain.Models.Applicant
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Applicant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Domicilio.Calle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Domicilio.Calle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoParterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoParterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoMaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoMaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nacionalidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nacionalidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rfc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rfc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Curp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Curp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ApplicantId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

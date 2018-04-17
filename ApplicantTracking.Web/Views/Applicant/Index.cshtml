@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ApplicantTracking.Domain.Models.Applicant>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Domicilio.Calle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoParterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoMaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nacionalidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rfc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Curp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Domicilio.Calle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoParterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoMaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaNacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nacionalidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rfc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Curp)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ApplicantId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ApplicantId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ApplicantId })
+        </td>
+    </tr>
+}
+
+</table>
