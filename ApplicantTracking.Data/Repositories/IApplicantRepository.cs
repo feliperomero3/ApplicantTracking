@@ -7,7 +7,7 @@ using ApplicantTracking.Domain.Models;
 
 namespace ApplicantTracking.Data.Repositores
 {
-    interface IApplicantRepository
+    public interface IApplicantRepository
     {
         IEnumerable<Applicant> GetApplicants();
 
