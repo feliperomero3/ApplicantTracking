@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ApplicantTracking.Data.Identity;
+using ApplicantTracking.Data.Repositores;
 using ApplicantTracking.Domain.Models;
 
 namespace ApplicantTracking.Web.Controllers
@@ -14,11 +15,17 @@ namespace ApplicantTracking.Web.Controllers
     public class ApplicantController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private IApplicantRepository _repository;
+
+        public ApplicantController(IApplicantRepository repository)
+        {
+            _repository = repository;
+        }
 
         // GET: Applicant
         public ActionResult Index()
         {
-            var applicants = db.Applicants.Include(a => a.Domicilio);
+            var applicants = _repository.GetApplicants();
             return View(applicants.ToList());
         }
 

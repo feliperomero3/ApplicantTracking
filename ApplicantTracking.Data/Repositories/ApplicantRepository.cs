@@ -8,7 +8,7 @@ using ApplicantTracking.Domain.Models;
 
 namespace ApplicantTracking.Data.Repositores
 {
-    public class ApplicantRepository : IApplicantRepository
+    public class ApplicantRepository : IApplicantRepository, IDisposable
     {
         private readonly ApplicationDbContext _context;
 
@@ -40,6 +40,11 @@ namespace ApplicantTracking.Data.Repositores
         public void UpdateApplicant(Applicant applicant)
         {
             throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            _context?.Dispose();
         }
     }
 }
