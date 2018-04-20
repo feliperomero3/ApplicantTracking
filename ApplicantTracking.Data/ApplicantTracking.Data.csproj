@@ -85,6 +85,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Identity\ApplicationSignInManager.cs" />
+    <Compile Include="Identity\ApplicationUserManager.cs" />
+    <Compile Include="Identity\EmailService.cs" />
+    <Compile Include="Identity\SmsService.cs" />
     <Compile Include="Migrations\201803082336377_InitialCreate.cs" />
     <Compile Include="Migrations\201803082336377_InitialCreate.Designer.cs">
       <DependentUpon>201803082336377_InitialCreate.cs</DependentUpon>
@@ -98,7 +102,6 @@
     <Compile Include="Identity\ApplicationDbContext.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="Repositories\IApplicantRepository.cs" />
-    <Compile Include="Identity\IdentityConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

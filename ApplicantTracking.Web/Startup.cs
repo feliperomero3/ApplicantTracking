@@ -1,7 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(ApplicantTracking.Web.Startup))]
+[assembly: OwinStartup(typeof(ApplicantTracking.Web.Startup))]
 namespace ApplicantTracking.Web
 {
     public partial class Startup
