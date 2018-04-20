@@ -1,8 +1,13 @@
 using System;
+using System.Web;
+using System.Data.Entity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
+using Unity;
+using Unity.Injection;
 using ApplicantTracking.Data.Identity;
 using ApplicantTracking.Data.Repositores;
-using Microsoft.AspNet.Identity;
-using Unity;
 
 namespace ApplicantTracking.Web
 {
@@ -43,6 +48,10 @@ namespace ApplicantTracking.Web
             // container.LoadConfiguration();
 
             // Register your type's mappings here.
+            container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>();
+            container.RegisterType<DbContext, ApplicationDbContext>();
+            container.RegisterType<IAuthenticationManager>(
+                new InjectionFactory(context => HttpContext.Current.GetOwinContext().Authentication));
             container.RegisterType<IApplicantRepository, ApplicantRepository>();
         }
     }
