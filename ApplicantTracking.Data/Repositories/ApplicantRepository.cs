@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using ApplicantTracking.Data.Identity;
 using ApplicantTracking.Domain.Models;
+using System.Data.Entity;
 
 namespace ApplicantTracking.Data.Repositores
 {
@@ -19,12 +19,13 @@ namespace ApplicantTracking.Data.Repositores
 
         public void AddApplicant(Applicant newApplicant)
         {
-            throw new NotImplementedException();
+            _context.Applicants.Add(newApplicant);
         }
 
         public void DeleteApplicant(int applicantId)
         {
-            throw new NotImplementedException();
+            Applicant applicant = _context.Applicants.Find(applicantId);
+            _context.Applicants.Remove(applicant);
         }
 
         public Applicant GetApplicant(int applicantId)
@@ -39,12 +40,27 @@ namespace ApplicantTracking.Data.Repositores
 
         public void UpdateApplicant(Applicant applicant)
         {
-            throw new NotImplementedException();
+            _context.Entry(applicant).State = EntityState.Modified;
         }
 
         public void Dispose()
         {
             _context?.Dispose();
+        }
+
+        public Applicant Find(int? id)
+        {
+            return _context.Applicants.Find(id);
+        }
+
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
+        }
+
+        public void Remove(Applicant applicant)
+        {
+            _context.Applicants.Remove(applicant);
         }
     }
 }

@@ -1,9 +1,5 @@
-﻿using System;
+﻿using ApplicantTracking.Domain.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ApplicantTracking.Domain.Models;
 
 namespace ApplicantTracking.Data.Repositores
 {
@@ -18,5 +14,13 @@ namespace ApplicantTracking.Data.Repositores
         void UpdateApplicant(Applicant applicant);
 
         void DeleteApplicant(int applicantId);
+
+        Applicant Find(int? id);
+
+        void SaveChanges();
+
+        void Remove(Applicant applicant);
+
+        void Dispose();
     }
 }

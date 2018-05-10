@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using ApplicantTracking.Data.Repositores;
+using ApplicantTracking.Domain.Models;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using ApplicantTracking.Data.Identity;
-using ApplicantTracking.Data.Repositores;
-using ApplicantTracking.Domain.Models;
 
 namespace ApplicantTracking.Web.Controllers
 {
     public class ApplicantController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
         private IApplicantRepository _repository;
 
         public ApplicantController(IApplicantRepository repository)
@@ -25,8 +18,8 @@ namespace ApplicantTracking.Web.Controllers
         // GET: Applicant
         public ActionResult Index()
         {
-            var applicants = _repository.GetApplicants();
-            return View(applicants.ToList());
+            var applicants = _repository.GetApplicants().ToList();
+            return View(applicants);
         }
 
         // GET: Applicant/Details/5
@@ -36,7 +29,7 @@ namespace ApplicantTracking.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Applicant applicant = db.Applicants.Find(id);
+            Applicant applicant = _repository.Find(id);
             if (applicant == null)
             {
                 return HttpNotFound();
@@ -47,7 +40,6 @@ namespace ApplicantTracking.Web.Controllers
         // GET: Applicant/Create
         public ActionResult Create()
         {
-            ViewBag.DomicilioId = new SelectList(db.Domicilios, "DomicilioId", "Calle");
             return View();
         }
 
@@ -56,16 +48,15 @@ namespace ApplicantTracking.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ApplicantId,ApellidoParterno,ApellidoMaterno,Nombre,FechaNacimiento,DomicilioId,Nacionalidad,Rfc,Curp")] Applicant applicant)
+        public ActionResult Create([Bind(Include = "ApplicantId,ApellidoParterno,ApellidoMaterno,Nombre,FechaNacimiento,Nacionalidad,Rfc,Curp")] Applicant applicant)
         {
             if (ModelState.IsValid)
             {
-                db.Applicants.Add(applicant);
-                db.SaveChanges();
+                _repository.AddApplicant(applicant);
+                _repository.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DomicilioId = new SelectList(db.Domicilios, "DomicilioId", "Calle", applicant.DomicilioId);
             return View(applicant);
         }
 
@@ -76,12 +67,11 @@ namespace ApplicantTracking.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Applicant applicant = db.Applicants.Find(id);
+            Applicant applicant = _repository.Find(id);
             if (applicant == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DomicilioId = new SelectList(db.Domicilios, "DomicilioId", "Calle", applicant.DomicilioId);
             return View(applicant);
         }
 
@@ -94,11 +84,10 @@ namespace ApplicantTracking.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(applicant).State = EntityState.Modified;
-                db.SaveChanges();
+                _repository.UpdateApplicant(applicant);
+                _repository.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DomicilioId = new SelectList(db.Domicilios, "DomicilioId", "Calle", applicant.DomicilioId);
             return View(applicant);
         }
 
@@ -109,7 +98,7 @@ namespace ApplicantTracking.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Applicant applicant = db.Applicants.Find(id);
+            Applicant applicant = _repository.Find(id);
             if (applicant == null)
             {
                 return HttpNotFound();
@@ -122,9 +111,9 @@ namespace ApplicantTracking.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Applicant applicant = db.Applicants.Find(id);
-            db.Applicants.Remove(applicant);
-            db.SaveChanges();
+            Applicant applicant = _repository.Find(id);
+            _repository.Remove(applicant);
+            _repository.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -132,7 +121,7 @@ namespace ApplicantTracking.Web.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _repository.Dispose();
             }
             base.Dispose(disposing);
         }
