@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
 using ApplicantTracking.Data.Identity;
 using ApplicantTracking.Domain.Models;
-using System.Data.Entity;
 
-namespace ApplicantTracking.Data.Repositores
+namespace ApplicantTracking.Data.Repositories
 {
     public class ApplicantRepository : IApplicantRepository, IDisposable
     {

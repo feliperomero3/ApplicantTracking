@@ -1,7 +1,7 @@
 ﻿using ApplicantTracking.Domain.Models;
 using System.Collections.Generic;
 
-namespace ApplicantTracking.Data.Repositores
+namespace ApplicantTracking.Data.Repositories
 {
     public interface IApplicantRepository
     {

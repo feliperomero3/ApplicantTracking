@@ -1,8 +1,8 @@
-﻿using ApplicantTracking.Data.Repositores;
-using ApplicantTracking.Domain.Models;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using ApplicantTracking.Data.Repositories;
+using ApplicantTracking.Domain.Models;
 
 namespace ApplicantTracking.Web.Controllers
 {

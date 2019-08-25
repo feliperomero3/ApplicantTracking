@@ -1,13 +1,13 @@
 using System;
-using System.Web;
 using System.Data.Entity;
+using System.Web;
+using ApplicantTracking.Data.Identity;
+using ApplicantTracking.Data.Repositories;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Unity;
 using Unity.Injection;
-using ApplicantTracking.Data.Identity;
-using ApplicantTracking.Data.Repositores;
 
 namespace ApplicantTracking.Web
 {
