@@ -2,7 +2,6 @@
 {
     public class Domicilio
     {
-        public int DomicilioId { get; set; }
         public string Calle { get; set; }
         public string NumeroInterior { get; set; }
         public string NumeroExterior { get; set; }
