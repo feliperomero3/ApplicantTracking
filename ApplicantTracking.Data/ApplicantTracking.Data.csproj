@@ -93,10 +93,6 @@
     <Compile Include="Migrations\201803082336377_InitialCreate.Designer.cs">
       <DependentUpon>201803082336377_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804170030596_AgregarApplicantyDomicilio.cs" />
-    <Compile Include="Migrations\201804170030596_AgregarApplicantyDomicilio.Designer.cs">
-      <DependentUpon>201804170030596_AgregarApplicantyDomicilio.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\ApplicantRepository.cs" />
     <Compile Include="Identity\ApplicationDbContext.cs" />
@@ -119,9 +115,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803082336377_InitialCreate.resx">
       <DependentUpon>201803082336377_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804170030596_AgregarApplicantyDomicilio.resx">
-      <DependentUpon>201804170030596_AgregarApplicantyDomicilio.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
