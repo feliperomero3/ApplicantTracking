@@ -1,10 +1,8 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using Microsoft.AspNet.Identity.EntityFramework;
 using ApplicantTracking.Data.Migrations;
 using ApplicantTracking.Domain.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ApplicantTracking.Data.Identity
 {
@@ -16,14 +14,9 @@ namespace ApplicantTracking.Data.Identity
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
         }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-
         public DbSet<Applicant> Applicants { get; set; }
         public DbSet<Domicilio> Domicilios { get; set; }
-        
+
         protected override void OnModelCreating(DbModelBuilder builder)
         {
             base.OnModelCreating(builder);
