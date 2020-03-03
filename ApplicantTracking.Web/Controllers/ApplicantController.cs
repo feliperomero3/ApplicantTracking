@@ -29,7 +29,7 @@ namespace ApplicantTracking.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Applicant applicant = _repository.Find(id);
+            Applicant applicant = _repository.GetApplicant(id.Value);
             if (applicant == null)
             {
                 return HttpNotFound();
@@ -53,7 +53,6 @@ namespace ApplicantTracking.Web.Controllers
             if (ModelState.IsValid)
             {
                 _repository.AddApplicant(applicant);
-                _repository.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -67,7 +66,7 @@ namespace ApplicantTracking.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Applicant applicant = _repository.Find(id);
+            Applicant applicant = _repository.GetApplicant(id.Value);
             if (applicant == null)
             {
                 return HttpNotFound();
@@ -85,7 +84,6 @@ namespace ApplicantTracking.Web.Controllers
             if (ModelState.IsValid)
             {
                 _repository.UpdateApplicant(applicant);
-                _repository.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(applicant);
@@ -98,7 +96,7 @@ namespace ApplicantTracking.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Applicant applicant = _repository.Find(id);
+            Applicant applicant = _repository.GetApplicant(id.Value);
             if (applicant == null)
             {
                 return HttpNotFound();
@@ -111,19 +109,9 @@ namespace ApplicantTracking.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Applicant applicant = _repository.Find(id);
-            _repository.Remove(applicant);
-            _repository.SaveChanges();
+            Applicant applicant = _repository.GetApplicant(id);
+            _repository.DeleteApplicant(applicant);
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                _repository.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

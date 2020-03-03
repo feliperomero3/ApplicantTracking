@@ -16,17 +16,6 @@ namespace ApplicantTracking.Data.Repositories
             _context = context;
         }
 
-        public void AddApplicant(Applicant newApplicant)
-        {
-            _context.Applicants.Add(newApplicant);
-        }
-
-        public void DeleteApplicant(int applicantId)
-        {
-            Applicant applicant = _context.Applicants.Find(applicantId);
-            _context.Applicants.Remove(applicant);
-        }
-
         public Applicant GetApplicant(int applicantId)
         {
             return _context.Applicants.Find(applicantId);
@@ -37,29 +26,27 @@ namespace ApplicantTracking.Data.Repositories
             return _context.Applicants.ToList();
         }
 
+        public void AddApplicant(Applicant newApplicant)
+        {
+            _context.Applicants.Add(newApplicant);
+            _context.SaveChanges();
+        }
+
         public void UpdateApplicant(Applicant applicant)
         {
             _context.Entry(applicant).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
+        public void DeleteApplicant(Applicant applicant)
+        {
+            _context.Applicants.Remove(applicant);
+            _context.SaveChanges();
         }
 
         public void Dispose()
         {
             _context?.Dispose();
-        }
-
-        public Applicant Find(int? id)
-        {
-            return _context.Applicants.Find(id);
-        }
-
-        public void SaveChanges()
-        {
-            _context.SaveChanges();
-        }
-
-        public void Remove(Applicant applicant)
-        {
-            _context.Applicants.Remove(applicant);
         }
     }
 }
