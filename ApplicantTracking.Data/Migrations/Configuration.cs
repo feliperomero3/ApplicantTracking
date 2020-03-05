@@ -1,14 +1,11 @@
+using System.Collections.Generic;
+using System.Data.Entity.Migrations;
+using ApplicantTracking.Data.Identity;
+using ApplicantTracking.Domain.Models;
+
 namespace ApplicantTracking.Data.Migrations
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-    using Domain.Models;
-    using Identity;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
         {
