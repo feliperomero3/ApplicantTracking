@@ -1,6 +1,6 @@
 # Applicant Tracking System
 
-Applicant Tracking System on ASP.NET MVC 5 with Entity Framework 6
+Applicant Tracking System on ASP.NET MVC 5 with Entity Framework 6 and Microsoft Identity 2.
 
 ## Descripción
 
